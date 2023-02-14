@@ -1,27 +1,24 @@
-import java.util.*;
+package com.talentbattle.java.coding;
+import java.util.Scanner;
 public class CheckPalindromeOrNot {
-    public static void main(String a[])
-    {
-        Scanner s=new Scanner(System.in);
-        System.out.println("Enter the Number:");
-        int n=s.nextInt();
-        int c=n;
-        int sum=0;
-        while(n>0)
-        {
-            int r=n%10;
-            sum=sum*10+r;
-            n=n/10;
-            
-        }
-        if(c==sum)
-        {
-            System.out.println(c+ " is a palindrome");
-        }
-        else
-        {
-            System.out.println(c+" is not a palindrome");
-
-        }
-    }
+	static boolean checkPalindrome(String sen) {
+		int i=0,j=sen.length()-1;
+		while(i<j) {
+			if(sen.charAt(i)!=sen.charAt(j))
+				return false;
+			i++;
+			j--;
+		}
+		return true;
+	}
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		String str=s.next();
+		if(checkPalindrome(str)) {
+			System.out.println("Palindrome");
+		}
+		else {
+			System.out.println("Not a Palindrome");
+		}
+	}
 }
